@@ -20,6 +20,11 @@ object RemoteConfigProvider {
         return@lazy latestVersion > PreferenceProvider.lastShayariVersion()
     }
 
+    fun onLatestVersionFetched() {
+        val latestVersion = Firebase.remoteConfig.getLong(LATEST_SHAYARI_VERSION)
+        PreferenceProvider.setShayariDataVersion(latestVersion.toInt())
+    }
+
     init {
         if (BuildConfig.DEBUG) {
             Firebase.remoteConfig.setConfigSettingsAsync(

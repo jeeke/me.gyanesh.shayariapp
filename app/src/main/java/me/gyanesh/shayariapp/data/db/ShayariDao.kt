@@ -29,4 +29,7 @@ interface ShayariDao {
     @Query("SELECT DISTINCT category FROM SHAYARI")
     fun getCategories(): LiveData<List<String>>
 
+    @Query("DELETE FROM SHAYARI")
+    fun clear()
+
 }

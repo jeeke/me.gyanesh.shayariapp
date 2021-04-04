@@ -1,5 +1,6 @@
 package me.gyanesh.shayariapp.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import me.gyanesh.shayariapp.R
 import me.gyanesh.shayariapp.data.FirebaseDataProvider
 import me.gyanesh.shayariapp.data.model.Category
+import me.gyanesh.shayariapp.ui.ChooseLanguageActivity
+import me.gyanesh.shayariapp.ui.HomeActivity
 import org.kodein.di.direct
 import org.kodein.di.generic.instance
 
@@ -39,6 +42,15 @@ class HomeFragment : BaseFragment() {
         recyclerView.apply {
             this.adapter = communityAdapter
             layoutManager = GridLayoutManager(context, 2)
+        }
+
+        toolbar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.navigation_change_lang) {
+                val i = Intent(context, ChooseLanguageActivity::class.java)
+                ChooseLanguageActivity.fromMainActivity = true
+                startActivity(i)
+            }
+            true
         }
 
     }

@@ -20,6 +20,10 @@
     <style name="AppTheme.Light" parent="Base.AppTheme" />
     <style name="AppTheme.DayNight" parent="Base.AppTheme" />
 
+
+    <style name="AppTheme.SplashTheme" parent="AppTheme.DayNight">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
 <!--    <style name="AppTheme.SplashTheme" parent="AppTheme.DayNight">-->
 <!--        <item name="android:windowBackground">@drawable/background_splash</item>-->
 <!--    </style>-->

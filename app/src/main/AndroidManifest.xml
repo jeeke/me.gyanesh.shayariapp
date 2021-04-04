@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.DayNight">
-        <activity android:name=".ui.HomeActivity">
+        <activity android:name=".ui.HomeActivity"/>
+        <activity android:name=".ui.ChooseLanguageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

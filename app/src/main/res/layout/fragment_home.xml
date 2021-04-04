@@ -11,8 +11,10 @@
         android:layout_height="?actionBarSize">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:menu="@menu/choose_lang"
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 

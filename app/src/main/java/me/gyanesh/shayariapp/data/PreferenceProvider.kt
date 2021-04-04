@@ -61,7 +61,7 @@ object PreferenceProvider {
     }
 
     fun isFirstTime(): Boolean = preference.getBoolean(FIRST_TIME, true)
-    fun lastShayariVersion(): Int = preference.getInt(LAST_SHAYARI_DATA_VERSION, 1)
+    fun lastShayariVersion(): Int = preference.getInt(LAST_SHAYARI_DATA_VERSION, 0)
     fun setShayariDataVersion(version: Int) {
         preference.edit().putInt(LAST_SHAYARI_DATA_VERSION, version).apply()
     }
