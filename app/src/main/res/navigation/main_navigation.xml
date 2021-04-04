@@ -21,7 +21,6 @@
         android:label="CategoryDetailFragment" >
         <argument
             android:name="category"
-            app:argType="string"
-            android:defaultValue=""/>
+            app:argType="me.gyanesh.shayariapp.data.model.Category" />
     </fragment>
 </navigation>

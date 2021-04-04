@@ -55,7 +55,7 @@ class CategoryAdapter :
             it.findNavController().navigate(
                 R.id.categoryDetailFragment,
                 bundleOf(
-                    "category" to getItem(position).category_name
+                    "category" to getItem(position)
                 )
             )
         }

@@ -12,11 +12,12 @@ class ChooseLanguageActivity : BaseActivity() {
 
     companion object {
         var fromMainActivity = false
+        var lang = ""
     }
 
-    private var lang = ""
     private var isFirstTime = true
     override fun onCreate(savedInstanceState: Bundle?) {
+        lang = getCurrentLanguage().language
         isFirstTime = PreferenceProvider.isFirstTime()
         navigateAwayConditional()
         setTheme(R.style.AppTheme_Light)

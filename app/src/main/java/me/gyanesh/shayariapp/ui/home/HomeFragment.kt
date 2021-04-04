@@ -11,9 +11,8 @@ import com.nblik.app.ui.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.gyanesh.shayariapp.R
 import me.gyanesh.shayariapp.data.FirebaseDataProvider
-import me.gyanesh.shayariapp.data.model.Category
 import me.gyanesh.shayariapp.ui.ChooseLanguageActivity
-import me.gyanesh.shayariapp.ui.HomeActivity
+import me.gyanesh.shayariapp.util.hide
 import org.kodein.di.direct
 import org.kodein.di.generic.instance
 
@@ -32,11 +31,8 @@ class HomeFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         val communityAdapter = CategoryAdapter()
         dataProvider.getAllCategories().observe(viewLifecycleOwner, Observer {
-            communityAdapter.submitList(
-                it.map {
-                    Category(category_name = it)
-                }
-            )
+            communityAdapter.submitList(it)
+            progressBar2.hide()
         })
 
         recyclerView.apply {

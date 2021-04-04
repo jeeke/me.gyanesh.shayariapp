@@ -18,13 +18,11 @@
     <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
     <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
     <!--selection controls.-->
-    <color name="color_primary">#204382</color>
-    <color name="color_primary_variant">#204382</color>
-    <color name="color_secondary">#204382</color>
-    <color name="color_secondary_variant">#204382</color>
-    <color name="color_chat_mine">#ABD1EA</color>
-    <color name="color_online">#01B63D</color>
-    <color name="color_warning">#F57C00</color>
+    <color name="color_primary">#ed6225</color>
+    <color name="color_primary_variant">#ed6225</color>
+    <color name="color_secondary">#ed6225</color>
+    <color name="color_secondary_variant">#ed6225</color>
+    <color name="color_chat_mine">#FFF4F0</color>
     <color name="color_signup_background">#10204382</color>
 
 

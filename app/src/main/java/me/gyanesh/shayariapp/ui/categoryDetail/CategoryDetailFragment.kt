@@ -30,13 +30,13 @@ class CategoryDetailFragment : BaseFragment() {
 
         val args by navArgs<CategoryDetailFragmentArgs>()
         val category = args.category
-        toolbar.title = category
+        toolbar.title = category.getLangTitle()
         toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
 
         val shayariAdapter = ShayariAdapter()
-        dataProvider.getShayariByCategory(category)
+        dataProvider.getShayariByCategory(category.id.toString())
             .observe(viewLifecycleOwner, {
                 shayariAdapter.submitList(it)
             })

@@ -6,11 +6,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import me.gyanesh.shayariapp.data.model.Category
 import me.gyanesh.shayariapp.data.model.Shayari
 
 @Database(
-    entities = [Shayari::class],
-    version = 3,
+    entities = [Shayari::class, Category::class],
+    version = 4,
     exportSchema = false
 )
 abstract class ShayariDb : RoomDatabase() {
@@ -23,4 +24,5 @@ abstract class ShayariDb : RoomDatabase() {
     }
 
     abstract fun shayariDao(): ShayariDao
+    abstract fun categoryDao(): CategoryDao
 }

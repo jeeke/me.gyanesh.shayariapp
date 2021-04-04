@@ -29,7 +29,7 @@ object RemoteConfigProvider {
         if (BuildConfig.DEBUG) {
             Firebase.remoteConfig.setConfigSettingsAsync(
                 remoteConfigSettings {
-                    minimumFetchIntervalInSeconds = 3600
+                    minimumFetchIntervalInSeconds = 300
                 }
             )
         }
