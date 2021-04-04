@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main_navigation" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            <com.google.android.material.bottomappbar.BottomAppBar-->
+<!--                android:id="@+id/bottom_app_bar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="64dp"-->
+<!--                android:layout_gravity="bottom"-->
+<!--                android:clickable="false"-->
+<!--                app:elevation="6dp" />-->
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_gravity="bottom"
+                android:clickable="false"
+                app:backgroundTint="?colorSurface"
+                app:menu="@menu/bottom_nav_menu" />
+
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:id="@+id/fab"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal|bottom"-->
+<!--                android:layout_marginBottom="12dp"-->
+<!--                android:elevation="4dp"-->
+<!--                android:src="@drawable/ic_add"-->
+<!--                app:backgroundTint="@color/color_primary"-->
+<!--                app:elevation="0dp"-->
+<!--                app:fabSize="mini"-->
+<!--                app:tint="@color/color_on_primary" />-->
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--        <include layout="@layout/view_drawer2" />-->
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
