@@ -10,7 +10,7 @@ import me.gyanesh.shayariapp.data.model.Shayari
 
 @Database(
     entities = [Shayari::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class ShayariDb : RoomDatabase() {

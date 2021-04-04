@@ -10,5 +10,8 @@
     <string name="no_mail_app">No Mail App Found</string>
     <string name="home">Home</string>
     <string name="saved">Saved</string>
+    <string name="copy">Copy</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
 
 </resources>

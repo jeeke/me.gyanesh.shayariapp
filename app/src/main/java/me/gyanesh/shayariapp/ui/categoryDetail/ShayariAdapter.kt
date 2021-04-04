@@ -23,7 +23,7 @@ class ShayariAdapter :
                     oldItem: Shayari,
                     newItem: Shayari
                 ): Boolean {
-                    return oldItem.id == newItem.id
+                    return oldItem.roomId == newItem.roomId
                 }
 
                 override fun areContentsTheSame(

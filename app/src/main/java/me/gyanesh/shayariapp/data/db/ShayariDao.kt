@@ -23,7 +23,7 @@ interface ShayariDao {
     @Query("SELECT * FROM Shayari WHERE roomId IN(:ids)")
     fun getSavedShayaris(ids: List<String>): LiveData<List<Shayari>>
 
-    @Query("SELECT COUNT(id) FROM Shayari WHERE category = :category")
+    @Query("SELECT COUNT(roomId) FROM Shayari WHERE category = :category")
     fun getShayariCountCategory(category: String): Int
 
     @Query("SELECT DISTINCT category FROM SHAYARI")

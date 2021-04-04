@@ -10,7 +10,7 @@ import kotlin.collections.ArrayList
 @Keep
 data class Shayari(
     @PrimaryKey(autoGenerate = true) var roomId: Int? = null,
-    var id: String = UUID.randomUUID().toString(),
+//    var id: String = UUID.randomUUID().toString(),
     var category: String = "",
     var content: String = ""
 ) {

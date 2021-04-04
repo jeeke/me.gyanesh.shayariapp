@@ -7,4 +7,7 @@
     <string name="no_mail_app">कोई मेल ऐप नहीं मिला</string>
     <string name="home">होम</string>
     <string name="saved">सेव्ड</string>
+    <string name="copy">कॉपी</string>
+    <string name="save">सेव</string>
+    <string name="share">शेयर</string>
 </resources>
