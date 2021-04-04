@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">शायरी ऐप</string>
+    <string name="choose_your_preferred_language">अपनी पसंदीदा भाषा चुनें</string>
+    <string name="please_select_your_language">कृपया भाषा चुनें</string>
+    <string name="continue_string">आगे बढे</string>
+    <string name="change_language">भाषा बदलें</string>
+    <string name="no_mail_app">कोई मेल ऐप नहीं मिला</string>
+    <string name="home">होम</string>
+    <string name="saved">सेव्ड</string>
+</resources>

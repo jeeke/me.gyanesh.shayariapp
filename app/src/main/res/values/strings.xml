@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ShayariApp</string>
-    <string name="no_mail_app">No Mail App Found</string>
     <string name="hindi" translatable="false">हिन्दी</string>
     <string name="india" translatable="false">India</string>
     <string name="pref_select_lang" translatable="false">select_language</string>
@@ -8,5 +7,8 @@
     <string name="please_select_your_language">Please select your language</string>
     <string name="continue_string">Continue</string>
     <string name="change_language">Change Language</string>
+    <string name="no_mail_app">No Mail App Found</string>
+    <string name="home">Home</string>
+    <string name="saved">Saved</string>
 
 </resources>

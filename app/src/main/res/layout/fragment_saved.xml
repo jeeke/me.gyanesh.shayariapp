@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@color/color_background"
-            app:title="Saved Shayaris" />
+            app:title="@string/saved" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
