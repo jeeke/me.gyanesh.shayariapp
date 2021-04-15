@@ -20,8 +20,6 @@ class ShayariApp : Application(), KodeinAware {
         mInstance = this
 
         configureToasty()
-        val provider by instance<FirebaseDataProvider>()
-        provider.fetchAllShayaris()
     }
 
     override val kodein = Kodein.lazy {

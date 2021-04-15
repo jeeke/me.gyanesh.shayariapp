@@ -11,8 +11,10 @@ import com.nblik.app.ui.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.gyanesh.shayariapp.R
 import me.gyanesh.shayariapp.data.FirebaseDataProvider
+import me.gyanesh.shayariapp.data.RemoteConfigProvider
 import me.gyanesh.shayariapp.ui.ChooseLanguageActivity
 import me.gyanesh.shayariapp.util.hide
+import me.gyanesh.shayariapp.util.show
 import org.kodein.di.direct
 import org.kodein.di.generic.instance
 
@@ -29,10 +31,19 @@ class HomeFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
+        val provider by instance<FirebaseDataProvider>()
+        if(RemoteConfigProvider.shouldFetchShayaris){
+            progressBar2.show()
+            provider.fetchAllShayaris {
+                progressBar2.hide()
+            }
+        }
+
         val communityAdapter = CategoryAdapter()
         dataProvider.getAllCategories().observe(viewLifecycleOwner, Observer {
             communityAdapter.submitList(it)
-            progressBar2.hide()
         })
 
         recyclerView.apply {

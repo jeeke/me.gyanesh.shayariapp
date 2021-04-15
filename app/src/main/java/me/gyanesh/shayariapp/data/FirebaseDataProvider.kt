@@ -10,27 +10,28 @@ import me.gyanesh.shayariapp.data.db.ShayariDb
 import me.gyanesh.shayariapp.data.model.Category
 import me.gyanesh.shayariapp.data.model.Shayari
 import me.gyanesh.shayariapp.util.io
+import me.gyanesh.shayariapp.util.ioThenMain
 
 class FirebaseDataProvider(private val db: ShayariDb) {
 
-    fun fetchAllShayaris() {
-        if (true) {
-            FirebaseDatabase.getInstance().reference
-                .addListenerForSingleValueEvent(
-                    object : ValueEventListener {
-                        override fun onDataChange(snapshot: DataSnapshot) {
+    fun fetchAllShayaris(onCompleteListener: () -> Unit = {}) {
+        FirebaseDatabase.getInstance().reference
+            .addListenerForSingleValueEvent(
+                object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
 
-                            val shayaris = snapshot.child("shayaris").children.mapNotNull {
-                                it.getValue(Shayari::class.java)?.apply {
-                                    category = category.toLowerCase()
-                                }
-                            }.toList()
+                        val shayaris = snapshot.child("shayaris").children.mapNotNull {
+                            it.getValue(Shayari::class.java)?.apply {
+                                category = category.toLowerCase()
+                            }
+                        }.toList()
 
-                            val cats = snapshot.child("categories").children.mapNotNull {
-                                it.getValue(Category::class.java)
-                            }.toList()
+                        val cats = snapshot.child("categories").children.mapNotNull {
+                            it.getValue(Category::class.java)
+                        }.toList()
 
-                            GlobalScope.io {
+                        GlobalScope.ioThenMain(
+                            {
                                 db.shayariDao().clear()
                                 db.shayariDao().insert(shayaris)
 
@@ -38,15 +39,17 @@ class FirebaseDataProvider(private val db: ShayariDb) {
                                 db.categoryDao().insert(cats)
 
                                 RemoteConfigProvider.onLatestVersionFetched()
+                            },
+                            {
+                                onCompleteListener()
                             }
-                        }
-
-                        override fun onCancelled(error: DatabaseError) {}
-
+                        )
                     }
-                )
 
-        }
+                    override fun onCancelled(error: DatabaseError) {}
+
+                }
+            )
     }
 
     fun getAllSavedShayaris(): LiveData<List<Shayari>> {
