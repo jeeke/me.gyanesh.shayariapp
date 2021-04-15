@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nblik.app.util.copyToClipboard
+import com.nblik.app.util.getString
+import me.gyanesh.shayariapp.R
 import me.gyanesh.shayariapp.data.PreferenceProvider
 import me.gyanesh.shayariapp.data.model.Shayari
 import me.gyanesh.shayariapp.databinding.HolderShayariBinding
@@ -55,7 +57,7 @@ class ShayariAdapter :
         holder.binding.ssLayout.setBackgroundColor(c)
         holder.binding.btnCopy.setOnClickListener {
             it.context.copyToClipboard(item.content)
-            it.context.toastSuccess("Shayari Copied Successfully!")
+            it.context.toastSuccess(getString(R.string.copied))
         }
         holder.binding.btnShare.setOnClickListener {
             val filepath = "shayri.png"
@@ -65,7 +67,7 @@ class ShayariAdapter :
         }
         holder.binding.btnSave.setOnClickListener {
             PreferenceProvider.addToSavedShayaris(item.roomId.toString())
-            it.context.toastSuccess("Shayari Saved Successfully!")
+            it.context.toastSuccess(getString(R.string.shayari_saved))
         }
     }
 

@@ -9,9 +9,11 @@
     <string name="change_language">Change Language</string>
     <string name="no_mail_app">No Mail App Found</string>
     <string name="home">Home</string>
-    <string name="saved">Saved</string>
+    <string name="saved">Saved Shayaris</string>
     <string name="copy">Copy</string>
     <string name="save">Save</string>
     <string name="share">Share</string>
+    <string name="copied">Shayari Copied Successfully!</string>
+    <string name="shayari_saved">Shayari Saved Successfully!</string>
 
 </resources>

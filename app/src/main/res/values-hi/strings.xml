@@ -6,8 +6,10 @@
     <string name="change_language">भाषा बदलें</string>
     <string name="no_mail_app">कोई मेल ऐप नहीं मिला</string>
     <string name="home">होम</string>
-    <string name="saved">सेव्ड</string>
+    <string name="saved">सेव शायरी</string>
     <string name="copy">कॉपी</string>
     <string name="save">सेव</string>
     <string name="share">शेयर</string>
+    <string name="copied">कॉपी सफल!</string>
+    <string name="shayari_saved">शायरी सेव हो गयी!</string>
 </resources>
